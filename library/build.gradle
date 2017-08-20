@@ -15,10 +15,10 @@ android {
         consumerProguardFiles 'proguard-rules.txt'
 
         ndk {
-            moduleName "gpuimage-library"
-            stl "gnustl_shared"
-            abiFilters "all"
-            ldLibs "log"
+            //moduleName "gpuimage-library"
+            //stl "gnustl_shared"
+            //abiFilters "all"
+            //ldLibs "log"
         }
     }
 
@@ -39,6 +39,12 @@ android {
 
     lintOptions {
         abortOnError false
+    }
+    buildToolsVersion '25.0.0'
+    externalNativeBuild {
+        ndkBuild {
+            path 'jni/Android.mk'
+        }
     }
 }
 
